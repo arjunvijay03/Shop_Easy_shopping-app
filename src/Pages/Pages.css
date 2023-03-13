@@ -1,0 +1,287 @@
+.homeBanner{
+  margin-top: 67px;
+    height: 100vh;
+    background: url(../Images/hero4.png) no-repeat center center / cover;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+}
+.homeBannerTexts{
+  margin-left:100px;
+}
+.bannerText3{
+  font-size: 50px;
+  color: rgb(8, 129, 120);
+  font-weight: 700;
+}
+.bannerText2{
+  font-size: 46px;
+  color: #222;
+  font-weight: 700;
+}
+.bannerText1{
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+}
+
+.bannerText4{
+  font-size: 16px;
+  color: #465b52;
+}
+.shopNowBtn{
+  background: url(../Images/button.png) no-repeat center center / contain;
+  width: 200px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.homeContainer{
+   
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.loader{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.spinner {
+
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border-top: 2px solid #000000;
+    border-right: 2px solid transparent;
+    animation: spinner .5s linear infinite;
+  }
+  
+  @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .ViewMoreParentDiv, .cartPageParentDiv{
+    margin-top: 70px;
+    width: 100vw;
+    
+    display: flex;
+    justify-content: center;
+  }
+  .viewMoreProductsWrapper{
+   
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 20px;
+    padding-left: 30px;
+  }
+  .ViewMoreParentDiv h3{
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 10px 30px;
+    font-weight: 400;
+  }
+
+ 
+ 
+  .cartProductsContainer{
+    width: 50%;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .1);
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+  }
+  .cartDetails{
+    width: 23%;
+    min-height: 130px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .1);
+    position: fixed; 
+    right: 10px;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .cartDetails p{
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .cartDetails span{
+    font-weight: 500;
+  }
+  .cartDetailsButtons{
+    margin-top: 20px;
+    display: flex; 
+    justify-content: space-evenly;
+  }
+  .cartDetailsButtons button{
+    padding: 10px 15px;
+    color: white;
+    font-size: 1rem;
+    width: 115px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .checkOutBtn{
+    background-color: #90EE90 ;
+    border: 2px solid #90EE90;
+    transition: .6s;
+  }
+  .checkOutBtn:hover{
+    background-color: #fff;
+    color:#90EE90 ;
+  }
+  .cleatCartBtn{
+    background-color: #F08080;
+    border: 2px solid #F08080;
+    transition: .6s;
+  }
+  .cleatCartBtn:hover{
+    background-color: #fff;
+    color:#F08080 ;
+  }
+  .cartEmptyContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cartEmpty{
+    font-size: 2rem;
+  }
+  .toHomeBtn{
+    padding: 10px 15px;
+    background-color: #90EE90;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 2px solid #90EE90;
+    transition: .6s;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .toHomeBtn:hover{
+    background-color: #fff;
+    color:#90EE90 ;
+    
+  }
+  .cartEmptyContainer i{
+    font-size: 5rem;
+    color: #7c7b7b;
+    margin-top: 50px;
+  }
+
+
+
+  @media (min-width:541px) {
+    .ViewMoreParentDiv{
+      padding-top: 20px;
+    }
+    .viewMoreContainer{
+      width: 90vw;
+      background-color: #fff;
+      min-height: 80vh;
+      border-radius: 5px;
+      padding: 10px;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .cartProductsContainer{
+      width: 60%;
+    }
+    .homeBanner{
+      height: 400px;
+    }
+    .homeBannerTexts{
+      margin-left: 40px;
+    }
+    .cartDetails{
+      width: 18%;
+    }
+    .cartDetailsButtons{
+      flex-direction: column;
+      gap: 10px;
+    }
+   
+  }
+
+  
+  @media (max-width:540px) {
+    .homeBanner{
+      width: 100vw;
+      height: 300px;
+      
+    }
+    .ViewMoreParentDiv{
+      min-height: 100vh;
+      background-color: #fff;
+    }
+    .viewMoreProductsWrapper{
+      width: 100vw;
+      grid-template-columns: 1fr;
+      place-items: center;
+      padding-left: 0;
+      gap: 0;
+    }
+    .cartDetails{
+      width: 100vw;
+     top: 66px;
+     padding-top: 10px;
+      left: 0;
+      z-index: 99;
+      box-shadow: none;
+      border-bottom: 1px solid #ebebeb;
+    }
+    .cartProductsContainer{
+      width: 100vw;
+      margin-top: 110px;
+      padding-top: -10px;
+      margin-top: 110px;
+    }
+    .bannerText3{
+      font-size: 20px;
+      
+      color: rgb(8, 129, 120);
+      font-weight: 700;
+    }
+    .bannerText2{
+      font-size: 20px;
+      
+    }
+    .bannerText1{
+      font-size: 15px;
+     
+    }
+    
+    .bannerText4{
+      font-size: 10px;
+      
+    }
+    .homeBannerTexts{
+      margin-left: 10px;
+      margin-top: 50px;
+    }
+    .shopNowBtn{
+      margin-left: 0;
+    }
+  }

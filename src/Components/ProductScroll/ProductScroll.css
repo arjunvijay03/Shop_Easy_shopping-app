@@ -1,0 +1,59 @@
+.productScrollParentDiv {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.productScrollContainer {
+  width: 90%;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  background-color: #fff;
+}
+.productScrollTitle {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  background-color: rgb(250, 253, 253);
+}
+.productScrollTitle span {
+  font-size: 1.7em;
+  font-weight: 500;
+  color: #555555;
+}
+.viewMoreBtn {
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 5px 10px;
+  background-color: rgb(218, 241, 241);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  margin-top: 0;
+ color: #000;
+}
+
+.productsWrapper {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+}
+.productsWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 820px) {
+  .productScrollContainer {
+    width: 100%;
+  }
+}

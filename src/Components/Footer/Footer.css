@@ -1,0 +1,44 @@
+.footerParentDiv{
+   
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 50px;
+   position: relative;
+    width: 100%;
+}
+.footerContainer{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+.footerParentDiv li{
+    list-style: none;
+    margin-left: 5px;
+}
+.footerParentDiv h6{
+    font-size: 1rem;
+}
+.logoutBtn{
+    background-color: #F08080;
+    border: 2px solid #F08080;
+    height: min-content;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100px;
+    cursor: pointer;
+    color: #fff;
+    transition: .5s;
+}
+.logoutBtn:hover{
+    background-color: #fff;
+    color: #F08080;
+}
+.copyRight{
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}

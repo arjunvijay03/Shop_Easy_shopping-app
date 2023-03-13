@@ -1,0 +1,95 @@
+.navbarParentDiv{
+    width: 100vw;
+    padding: 10px 50px;
+    background-color: #B2EBF2;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header img{
+    border-radius: 10px;
+    cursor: pointer;
+}
+.searchForm{
+    width: 30vw ;
+    background-color: #fff;
+    display: flex;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.searchForm input{
+    border: none;
+    width: calc(100% - 50px);
+    font-size: 1rem;
+    padding-left: 10px;
+    
+}
+.searchForm input:focus{
+    outline: none;
+}
+
+
+.searchForm button{
+ width: 45px;
+ aspect-ratio: 1/1;
+ border: none;
+ background-color: #fff;
+ cursor: pointer;
+
+}
+
+.searchForm button i{
+    font-size: 1.3rem;
+}
+header .login{
+    font-size: 1.3rem;
+}
+.homeLoginBtn{
+    border: none;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #fff;
+    height: 45px;
+    cursor: pointer;
+}
+
+.homeCartBtn{
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    cursor: pointer;
+}
+.searchBtn{
+    color: #000;
+    margin-top: 0;
+}
+
+
+@media (max-width:540px) {
+   .navbarParentDiv{
+    padding-inline: 5px;
+    
+   }
+  
+
+    
+    .searchForm{
+        width: 150px
+    }
+    header{
+        justify-content: space-between;
+    }
+}

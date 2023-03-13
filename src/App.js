@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./Pages/Home";
+import SignupPage from "./Pages/SignupPage";
+
+import ProductViewPage from "./Pages/ProductViewPage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginPage from "./Pages/LoginPage";
+import ViewMore from "./Pages/ViewMore";
+import Cartpage, {} from './Pages/Cartpage'
+import { useContext, useEffect } from "react";
+import { authContext } from "./Context/Authcontext";
+import { firebaseContext } from "./Context/FirebaseContext";
+
+
+
 
 function App() {
+  // const {setUser} = useContext(authContext)
+  // const {firebase} = useContext(firebaseContext)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route excat path="/" element={<Home/>}/>
+          <Route  path="/signup" element={<SignupPage/>}/>
+          <Route  path="/login" element={<LoginPage/>}/>
+          <Route  path="/productview/:productId" element={<ProductViewPage/>}/>
+          <Route  path="/viewmore/:category" element={<ViewMore/>}/>
+          <Route  path="/cart" element={<Cartpage/>}/>
+
+        </Routes>
+      </Router>
+     
     </div>
   );
 }
