@@ -34,7 +34,7 @@ function Cartpage() {
                 
                 return  <CartProductCard  key={index} cartItems={cartItems} cart = {products}></CartProductCard>
         }): <div className='cartEmptyContainer'>
-          <i class="fa-solid fa-cart-arrow-down"></i>
+          <i className="fa-solid fa-cart-arrow-down"></i>
           <p className='cartEmpty'>Cart is empty</p>
           <Link to={'/'}><button className='toHomeBtn'>Go back to home</button></Link>
           

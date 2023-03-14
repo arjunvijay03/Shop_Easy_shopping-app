@@ -20,7 +20,7 @@ function Footer() {
             }}>Logout</button>
      </div>
             
-            <p className='copyRight'><i class="fa-regular fa-copyright"></i>Arjun vijay-2023</p>
+            <p className='copyRight'><i className="fa-regular fa-copyright"></i>Arjun vijay-2023</p>
     </div>
    
   )

@@ -8,9 +8,9 @@ function FeaturedProducts() {
     <div className="featureProductsParentDiv">
     <h3>Featured</h3>
       <div className="featuredProductsContainer">
-        {featuredProductsId.map((id) => {
+        {featuredProductsId.map((id, index) => {
           let product = Data.find((element) => element.id == id);
-          return <ProductCard product={product}></ProductCard>;
+          return <ProductCard key={index} product={product}></ProductCard>;
         })}
       </div>
     </div>

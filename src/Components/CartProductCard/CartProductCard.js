@@ -15,7 +15,7 @@ function CartProductCard({ cart, cartItems }) {
 
     let currentCartItem = cartItems.find(element=>element.id == cart.id)
     const handleDecrease =()=>{
-      console.log(cartItems);
+      
     if(currentCartItem.number == 1){
      cartItems =  cartItems.filter((element)=>element.id != currentCartItem.id)
      docRef.update({cart:cartItems})
@@ -24,12 +24,12 @@ function CartProductCard({ cart, cartItems }) {
       currentCartItem.number -=1
       docRef.update({cart:cartItems})
     }
-    console.log(cartItems);
+   
     }
 
 
     const handleIncrease =()=>{
-      console.log(cartItems);
+      
     // let currentCart = cartItems.find(element=>element.id == cart.id)
     
 
