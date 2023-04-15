@@ -236,6 +236,11 @@
       min-height: 100vh;
       background-color: #fff;
     }
+    .viewMoreContainer h3{
+      margin-left: 10px;
+      margin-block: 5px;
+      
+    }
     .viewMoreProductsWrapper{
       width: 100vw;
       grid-template-columns: 1fr;
@@ -248,7 +253,7 @@
      top: 66px;
      padding-top: 10px;
       left: 0;
-      z-index: 99;
+      z-index: 0;
       box-shadow: none;
       border-bottom: 1px solid #ebebeb;
     }

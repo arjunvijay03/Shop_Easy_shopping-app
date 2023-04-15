@@ -1,0 +1,111 @@
+.addressFormContainer{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter:blur(1px);
+    z-index: 12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 10px; */
+
+}
+.adfWrapper{
+    width: 600px;
+    /* height: 500px; */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+
+}
+.adfWrapper h4{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(10, 180, 180);
+}
+.addressForm{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding-top: 20px;
+    /* padding-inline: 10px; */
+    place-items: center;
+}
+.addressForm input, .addressForm textarea{
+    /* height: 35px; */
+    width: 90%;
+    border:2px solid #565b5c;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 10px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.addressForm textarea{
+    grid-column: 1 / 3;
+    width: 95%;
+    height: 100px;
+    
+
+}
+.adfType{
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 3;
+    gap: 5px;
+    width: 100%;
+    justify-content: start;
+    padding-left: 1rem;
+}
+.adfType div{
+    width: min-content;
+    display: flex;
+    gap: 10px;
+}
+.adfType input{
+    margin-left: 10px;
+}
+.adfType p{
+    color: #363535;
+}
+.adfButtons{
+    margin-top: 20px;
+    gap: 20px;
+}
+.adfErrorMsg{
+    grid-column: 1 / 3;
+    width: 100%;
+    margin-left: 3rem;
+    color: red ;
+}
+.adfButtons button{
+    font-size: 1rem;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(3, 129, 129);
+    color: #fff;
+    cursor: pointer;
+}
+.adfButtons button:hover{
+    background-color: rgb(13, 139, 139);
+
+}
+.adfButtons p{
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+.invalid{
+    border-color: red !important;
+    
+}
+.invalidText{
+    color: red !important;
+}

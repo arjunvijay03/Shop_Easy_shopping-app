@@ -24,6 +24,7 @@ function ProductScroll({category}) {
             return <ProductCard product= {element} key={index}></ProductCard>
           })
           }
+         
         </div>
       </div>
 

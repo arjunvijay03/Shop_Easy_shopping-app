@@ -11,7 +11,7 @@ function ProductView() {
   const {firebase} = useContext(firebaseContext)
   const {user} = useContext(authContext)
   const product = Data.find((element) => element.id == productId);
-  const [largImage, setLargeImage] = useState(product.images[0]);
+  const [largImage, setLargeImage] = useState();
   const [loading, setLoading] = useState(true);
   const Navigate = useNavigate()
   const {cartItems} = useContext(cartContext)
@@ -20,7 +20,10 @@ function ProductView() {
       setLoading(false);
     }, 300);
   }, []);
+  useEffect(()=>{
 
+    product && setLargeImage(product.images[0])
+  },[product])
     // ---------------------------CART UPDATE-------------------------------
     let docRef =  firebase.firestore().collection('users')
 
@@ -109,6 +112,9 @@ let currentProduct = cartItems?.find(item=>item.id == productId)
             <div className="spinner"></div>
           </div>
         )}
+
+
+        
     </div>
   );
 }

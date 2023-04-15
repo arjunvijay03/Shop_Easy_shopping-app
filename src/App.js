@@ -10,6 +10,7 @@ import Cartpage, {} from './Pages/Cartpage'
 import { useContext, useEffect } from "react";
 import { authContext } from "./Context/Authcontext";
 import { firebaseContext } from "./Context/FirebaseContext";
+import AddressPage from "./Pages/AddressPage";
 
 
 
@@ -28,6 +29,7 @@ function App() {
           <Route  path="/productview/:productId" element={<ProductViewPage/>}/>
           <Route  path="/viewmore/:category" element={<ViewMore/>}/>
           <Route  path="/cart" element={<Cartpage/>}/>
+          <Route  path="/addresses" element={<AddressPage/>}/>
 
         </Routes>
       </Router>

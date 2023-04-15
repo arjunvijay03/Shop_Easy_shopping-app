@@ -13,7 +13,9 @@ function Cartpage() {
     let docRef =  firebase.firestore().collection('users')
 
 
-   
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
     const handleClearCart = ()=>{
       docRef.doc(user?.uid).update({

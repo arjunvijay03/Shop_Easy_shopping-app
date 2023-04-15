@@ -1,0 +1,44 @@
+.addressContainer{
+    width: 50vw;
+    min-height: 80vh;
+    background-color: white;
+    margin-inline: auto;
+    margin-top: 75px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .1);
+    padding: 20px;
+}
+.manageAddressTitle{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: rgb(76, 76, 76);
+}
+.addNewAddress{
+    width: 100%;
+    border: 1px solid #ebebeb;
+    border-radius: 2px;
+    padding:  10px;
+    margin-top: 10px;
+    margin-inline: auto;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgb(10, 180, 180);
+    cursor: pointer;
+}
+
+.addressWapper{
+    margin-top: 20px;
+
+}
+@media (max-width:820px) {
+    .addressContainer{
+        width: 80vw;
+    }
+}
+@media (max-width:480px) {
+    .addressContainer{
+        width: 100vw;
+        box-shadow: none;
+    }
+}
+

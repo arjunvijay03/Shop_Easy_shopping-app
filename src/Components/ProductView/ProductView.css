@@ -165,12 +165,8 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        padding-top: 10px;
     }
-    /* *{
-        outline: 1px solid red;
-    } */
-   /* .productViewContainer{
-    height: 150px;
-   } */
+   
  }
 

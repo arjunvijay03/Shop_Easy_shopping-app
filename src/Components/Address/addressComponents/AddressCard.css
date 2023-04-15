@@ -1,0 +1,56 @@
+.addressCardContainer{
+    width: 100%;
+    border: 1px solid #ebebeb;
+    border-radius: 2px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+.addressType{
+    background-color: #ebebeb;
+    border-radius: 3px;
+    padding: 3px 5px;
+    width: min-content;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.adCardNamePh{
+    
+    font-weight: 500;
+    display: flex;
+    gap: 20px;
+}
+.adcAddress{
+    color: rgb(61, 61, 61);
+}
+.adcElepsis{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+
+}
+.adcOptions{
+    position: relative;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 1px rgba(31, 31, 31, 0.1);
+    display: none;
+    border-radius: 5px;
+}
+.adcOptions div{
+    padding: 5px 8px;
+    cursor: pointer;
+}
+.adcOptions div:nth-child(1){
+    border-bottom: 1px solid #ebebeb;
+}
+.adcOptions div:hover{
+    background-color: #f5f5f5;
+}
+.adcElepsis:hover .adcOptions{
+    display: block;
+}

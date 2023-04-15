@@ -55,5 +55,6 @@
 @media (max-width: 820px) {
   .productScrollContainer {
     width: 100%;
+    box-shadow: none;
   }
 }

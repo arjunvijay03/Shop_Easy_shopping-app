@@ -15,7 +15,7 @@ function ViewMore() {
       <Navbar></Navbar>
       <div className="viewMoreContainer">
 
-      <h3>{category}</h3>
+      <h3>{category.charAt(0).toUpperCase() + category.slice(1)}</h3>
       <div className="viewMoreProductsWrapper">
         {Data.filter(item=>item.category == category).map((element, index)=>{
 

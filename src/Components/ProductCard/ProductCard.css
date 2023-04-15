@@ -13,6 +13,8 @@
     overflow: hidden;
     cursor: pointer;
     background-color: #fff;
+
+    
 }
 .cardImage{
     width: 100%;
@@ -25,6 +27,7 @@
 .productImg{
  
     object-fit: contain;
+    
     
 }
 .listView .productImg{
