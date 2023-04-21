@@ -29,7 +29,7 @@ function ProductView() {
 
 
   
-let currentProduct = cartItems?.find(item=>item.id == productId)
+let currentProduct = cartItems?.find(item=>item.id === productId)
 
   const imgChange = (event) => {
     setLargeImage(event.target.src);
@@ -45,7 +45,7 @@ let currentProduct = cartItems?.find(item=>item.id == productId)
 
   const  handleAddCart = ()=>{
 
-   if(currentProduct == undefined){
+   if(currentProduct === undefined){
  
      docRef.doc(user?.uid).update({
       cart: firebase.firestore.FieldValue.arrayUnion({
@@ -98,10 +98,11 @@ let currentProduct = cartItems?.find(item=>item.id == productId)
             )}
             <span className="productViewDes">{product.description}</span>
             <div className="cartBuyBtn">
-              <button className= {` ${currentProduct == undefined?'addToCart':'alreadyInCart  '}`} onClick={()=>{
+              <button className= {` ${currentProduct === undefined?'addToCart':'alreadyInCart  '}`} onClick={()=>{
                 user? handleAddCart() : Navigate('/login')
-                }}>{currentProduct == undefined? 'Add to cart': 'Go to cart'}</button>
-              <button className="buyNow"> Buy now</button>
+                }}>{currentProduct === undefined? 'Add to cart': 'Go to cart'}</button>
+              <button onClick={()=>{
+                user? Navigate('/confirm_order',{state:{product:[{id:product.id, number:1}]}}) :  Navigate('/login')}} className="buyNow"> Buy now</button>
             </div>
           </div>
         </div>

@@ -1,13 +1,23 @@
 import React, { useContext } from 'react'
+import {useNavigate} from 'react-router-dom'
 import './AddressCard.css'
 import { authContext } from '../../../Context/Authcontext';
 import { firebaseContext } from '../../../Context/FirebaseContext';
-function AddressCard({singleAddress, address, setAddressFormShow, dispatch}) {
+import { addressContext } from '../../../Context/AddressContext';
+function AddressCard({singleAddress, setAddressFormShow, dispatch, confirmOrder, setActive}) {
   const {firebase} = useContext(firebaseContext)
   const {user} = useContext(authContext)
+  const {address, defaultAddressId} = useContext(addressContext)
+  const navigate = useNavigate()
   
   return (
     <div className='addressCardContainer'>
+        {!confirmOrder && <input type="radio" checked={defaultAddressId === singleAddress?.id} name='addressRadio' className='adcRadio' onChange={(event)=>{
+          
+          firebase.firestore().collection('users').doc(user.uid).update({
+            defaultAddressId : singleAddress.id
+          })
+        }} />}
         <div className="addressType">
             {singleAddress?.type.toUpperCase()}
         </div>
@@ -19,9 +29,9 @@ function AddressCard({singleAddress, address, setAddressFormShow, dispatch}) {
             {singleAddress?.address}
         </span>
 
-        <div className="adcElepsis">
+       {!confirmOrder && <div className="adcElepsis">
           <i style={{float:'right'}} className="fa-solid fa-ellipsis-vertical"></i>
-          <div className="adcOptions">
+        <div className="adcOptions">
             <div onClick={()=>{
               setAddressFormShow(true);
               dispatch({type:'updateAll', payload:singleAddress})
@@ -33,7 +43,15 @@ function AddressCard({singleAddress, address, setAddressFormShow, dispatch}) {
               })
             }}>Delete</div>
           </div>
-        </div>
+        </div>}
+       { confirmOrder && <div className='adccoBtns'> 
+                <button onClick={()=>{
+                navigate('/addresses')
+              }} className='adccoButton'>EDIT</button>
+                <button onClick={()=>{
+                  setActive('summary')
+                }}  className='adccoButton'>DELIVER HERE</button>
+       </div>}
       
     </div>
   )

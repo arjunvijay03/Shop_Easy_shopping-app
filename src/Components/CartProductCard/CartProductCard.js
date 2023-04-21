@@ -4,50 +4,51 @@ import Data from "../../Data/Data";
 import {firebaseContext} from '../../Context/FirebaseContext'
 import {authContext} from '../../Context/Authcontext'
 import { Link } from "react-router-dom";
-function CartProductCard({ cart, cartItems }) {
+function CartProductCard({forOrderConfirm, cart, cartItems, handleDecrease, handleIncrease, handleProductRemove  }) {
     const {firebase} = useContext(firebaseContext)
     const {user} = useContext(authContext)
     
+    let product = Data.find((item) => item.id == cart?.id);
+    // let docRef =  firebase.firestore().collection('users').doc(user?.uid)
+    // let currentCartItem = cartItems.find(element=>element.id == cart.id);
 
-    let docRef =  firebase.firestore().collection('users').doc(user?.uid)
+    // let product = Data.find((item) => item.id == cart.id);
 
-    let product = Data.find((item) => item.id == cart.id)
-
-    let currentCartItem = cartItems.find(element=>element.id == cart.id)
-    const handleDecrease =()=>{
+    // let currentCartItem = cartItems.find(element=>element.id == cart.id);
+    // const handleDecrease =()=>{
       
-    if(currentCartItem.number == 1){
-     cartItems =  cartItems.filter((element)=>element.id != currentCartItem.id)
-     docRef.update({cart:cartItems})
-    }else{
+    //     if(currentCartItem.number == 1){
+    //     cartItems =  cartItems.filter((element)=>element.id != currentCartItem.id)
+    //     docRef.update({cart:cartItems})
+    //     }else{
 
-      currentCartItem.number -=1
-      docRef.update({cart:cartItems})
-    }
+    //       currentCartItem.number -=1
+    //       docRef.update({cart:cartItems})
+    //     }
    
-    }
+    // }
 
 
-    const handleIncrease =()=>{
+    // const handleIncrease =()=>{
       
-    // let currentCart = cartItems.find(element=>element.id == cart.id)
+    // // let currentCart = cartItems.find(element=>element.id == cart.id)
     
 
-      currentCartItem.number +=1
-      docRef.update({cart:cartItems})
-    }
+    //   currentCartItem.number +=1
+    //   docRef.update({cart:cartItems})
+    // }
 
-    const handleProductRemove = ()=>{
-      cartItems =  cartItems.filter((element)=>element.id != currentCartItem.id)
-     docRef.update({cart:cartItems})
-    }
+    // const handleProductRemove = ()=>{
+    //   cartItems =  cartItems.filter((element)=>element.id != currentCartItem.id)
+    //  docRef.update({cart:cartItems})
+    // }
   return (
     <div className="cartCardContainer">
       <div className="cartCardImageContainer">
-        <img src={product.thumbnail} alt="" />
+        <img src={product?.thumbnail} alt="" />
       </div>
       <div className="cartCardProductDetails">
-        <Link to={`/productview/${product.id}`}>
+        <Link to={`/productview/${product?.id}`}>
         
         <span className="productName">
           {product?.title.length >= 30
@@ -59,16 +60,16 @@ function CartProductCard({ cart, cartItems }) {
         <span className="productPrice">₹{product?.price}</span>
 
         <div className="buttons">
-          <span onClick={handleDecrease} className="add">-</span>
+          <span onClick={()=>handleDecrease(cart.id)} className="add">-</span>
           <span className="itemCount">
-            {cart.number}
+            {cart?.number}
            
           </span>
-          <span onClick={handleIncrease} className="remove">+</span>
+          <span onClick={()=>handleIncrease(cart.id)} className="remove">+</span>
         </div>
-        <div>Total amount: <span>{product?.price * cart.number }</span></div>
+        <div>Total amount: <span>{product?.price * cart?.number }</span></div>
       </div>
-      <div onClick={handleProductRemove} className="removeProduct">X</div>
+      {!forOrderConfirm && <div onClick={()=>handleProductRemove(cart.id)} className="removeProduct">X</div>}
     </div>
   );
 }

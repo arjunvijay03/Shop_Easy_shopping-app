@@ -1,0 +1,77 @@
+.confirmOrderContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.coStepCont{
+    width: 100%;
+    border: 1px solid #ebebeb;
+   
+}
+.coStepContent{
+    display: none;
+    padding-top: 10px;
+    background-color: #fff;
+    padding-bottom: 10px;
+    
+}
+.coStepActive .coStepContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.coStepTitle{
+    width: 100%;
+    padding: 10px; 
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #B2EBF2;
+
+}
+.coStepActive .coStepTitle {
+    background-color: rgb(0, 154, 154);
+    color: #fff;
+}
+.coStepTitle div{
+    /* padding: 5px; */
+    background-color: #fff;
+    color: #000;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.coSummaryDetails{
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2e2e2e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.coSummaryDetails button{
+    letter-spacing: 1px;
+}
+.coPaymentOptions{
+    width: 100%;
+}
+.copBtns{
+    width: 100%;
+    padding: 10px;
+    
+}
+.copBtns button{
+    
+    float: right;
+}
+

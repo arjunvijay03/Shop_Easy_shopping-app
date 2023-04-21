@@ -58,7 +58,7 @@ function Navbar() {
         <i className="fa-solid fa-bars"></i>
         <div className="menuContainer">
           <div className="profileContainer">
-            <div className="profilePic">{user?.displayName[0].toUpperCase()}</div>
+            <div className="profilePic">{user?.displayName?.charAt(0).toUpperCase()}</div>
             <div className="profileDetails"><p>{user?.displayName}</p></div>
           </div>
 
@@ -74,6 +74,7 @@ function Navbar() {
         <div className="navBtns"><i className="fa-solid fa-table-list"></i>  <span>My orders</span></div>
         <div className="navBtns"  onClick={() =>{
                     firebase.auth().signOut();
+                    navigate('/')
             }}><i className="fa-solid fa-power-off"></i>  <span>Logout</span></div>
 
           

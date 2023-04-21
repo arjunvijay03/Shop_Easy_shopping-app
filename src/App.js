@@ -11,6 +11,7 @@ import { useContext, useEffect } from "react";
 import { authContext } from "./Context/Authcontext";
 import { firebaseContext } from "./Context/FirebaseContext";
 import AddressPage from "./Pages/AddressPage";
+import ConfirmOrderPage from "./Pages/ConfirmOrderPage";
 
 
 
@@ -30,6 +31,7 @@ function App() {
           <Route  path="/viewmore/:category" element={<ViewMore/>}/>
           <Route  path="/cart" element={<Cartpage/>}/>
           <Route  path="/addresses" element={<AddressPage/>}/>
+          <Route  path="/confirm_order" element={<ConfirmOrderPage/>}/>
 
         </Routes>
       </Router>

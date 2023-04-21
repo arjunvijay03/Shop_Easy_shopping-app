@@ -24,6 +24,10 @@ function Signup() {
         name:signupData.name,
         cart:[]
       })
+      firebase.firestore().collection('orders').doc(result.user.uid).set({
+        orders:[]
+      })
+
     }).then(()=>Navigate('/'))
   }
 
